@@ -19,5 +19,7 @@ h1{
     color: crimson;
     font-size: -webkit-xxx-large;
 }
-
+table, th, td {
+    border: 1px solid black;
+  }
    
