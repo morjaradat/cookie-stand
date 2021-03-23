@@ -13,13 +13,62 @@ h2{
 
 }
 h1{
-
+text-align: center;
     margin: 32px 104px;
     display: block;
     color: crimson;
     font-size: -webkit-xxx-large;
 }
+main #sales{
+    text-align: center;
+    font-size: -webkit-xxx-large;
+   margin-left: 462px;
+}
+#photo{
+    width: 100%;
+}
+#photo img{
+    width: 33%;
+    display: inline-block;
+}
 table, th, td {
     border: 1px solid black;
   }
-   
+  header{
+      background-color: #e4fbff;
+  }
+#top-nav{
+    font-size: 30px;
+    text-align: center;
+    background-color:#e4fbff;
+}
+nav{
+    text-align: center;
+    background-color: #e4fbff ;
+    
+}
+.link ,a{
+text-align: center;
+display: inline-block;
+text-decoration: none;
+list-style: none;
+color: blueviolet;
+width: 25%;
+}
+table, th, td {
+    border: 1px solid #3d53c3;
+    border-collapse: inherit;
+    width: -webkit-fill-available;
+    text-align: center;
+    font-size: 25px;
+    color: darkolivegreen;
+}
+#backlink{
+    text-align: center;
+display: inline-block;
+text-decoration: none;
+list-style: none;
+color: blueviolet;
+width: 25%;
+font-size: larger;
+}
