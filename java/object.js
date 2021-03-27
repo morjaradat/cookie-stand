@@ -92,37 +92,34 @@ this.sumOfColumn=function()
   }
 };
 footerData.shift();
-// console.log(footerData);
-// console.log(typeof (typeof footerData));
-//--------------------------------------
-// console.log(this.totalCulomn);
-const footerRow = document.createElement('tr');
-table.appendChild(footerRow);
 
-const td3=document.createElement('td');
-footerRow.appendChild(td3);
-td3.textContent='Total';
-//--------------------------------------------
 this.sumOfColumn();
 
-for (let i = 0; i < times.length; i++) {
-  const td4 =document.createElement('td');
-  footerRow.appendChild(td4);
-  td4.textContent= footerData[i];
-}
-// let footerNum=Number.footerData;
-// console.log(footerNum);
-// console.log(typeof(typeof footerData) );
+let sumOfTotal2= function(){
 
-for(let i=0;i<footerData.length;i++){
-  sumOfTotal = sumOfTotal +footerData[i];
+  const footerRow = document.createElement('tr');
+  table.appendChild(footerRow);
+
+  const td3=document.createElement('td');
+  footerRow.appendChild(td3);
+  td3.textContent='Total';
+
+  for (let i = 0; i < times.length; i++) {
+    const td4 =document.createElement('td');
+    footerRow.appendChild(td4);
+    td4.textContent= footerData[i];
+  }
+  for(let i=0;i<footerData.length;i++){
+    sumOfTotal = sumOfTotal +footerData[i];
   // console.log(sumOfTotal);
-}
+  }
+  const finTotal=document.createElement('td');
+  footerRow.appendChild(finTotal);
+  finTotal.textContent=(sumOfTotal);
+};
 
-const finTotal=document.createElement('td');
-footerRow.appendChild(finTotal);
-finTotal.textContent=(sumOfTotal);
-// console.log(this.sumOfTotal);
+sumOfTotal2();
+console.log(sumOfTotal);
 // console.log(this);
 
 let myForm=document.getElementById('new-shop');
@@ -131,30 +128,33 @@ myForm.addEventListener('submit',addShop);
 
 function addShop(event){
   event.preventDefault();
-  // console.log(event);
+
   let StoreName=event.target.StoreName.value;
-  // console.log(StoreName);
+
   let MinimumCustomers =Number(event.target.MinimumCustomers.value) ;
-  // console.log( MinimumCustomers);
+
   let MaximumCustomers =Number(event.target.MaximumCustomers.value) ;
-  // console.log( MaximumCustomers);
+
   let AverageSales =Number(event.target.AverageSales.value) ;
-  // console.log( AverageSales);
+
   let newShop =new CookiesShop(StoreName,MinimumCustomers,MaximumCustomers,AverageSales);
-  // console.log(newShop);
+
   document.getElementById('Table-Of-Shops').deleteRow(-1);
   newShop.render();
-  console.log(allLocation);
-  const footerRow = document.createElement('tr');
-  table.appendChild(footerRow);
-  const td3=document.createElement('td');
-  footerRow.appendChild(td3);
-  td3.textContent='Total';
-  for (let i = 0; i < times.length; i++) {
-    const td4 =document.createElement('td');
-    footerRow.appendChild(td4);
-    td4.textContent=footerData[i];
-  }
+  sumOfTotal2();
+  console.log(sumOfTotal);
+
+  // console.log(allLocation);
+  // const footerRow = document.createElement('tr');
+  // table.appendChild(footerRow);
+  // const td3=document.createElement('td');
+  // footerRow.appendChild(td3);
+  // td3.textContent='Total';
+  // for (let i = 0; i < times.length; i++) {
+  //   const td4 =document.createElement('td');
+  //   footerRow.appendChild(td4);
+  //   td4.textContent=footerData[i];
+  // }
 }
 
 
